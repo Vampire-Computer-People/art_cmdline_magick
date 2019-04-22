@@ -1,0 +1,28 @@
+## CUSTOM CLI VALUES ##
+MAGICK_VERSION: 7
+
+
+## MEME MACHINE VALUES ##
+IMAGE_URL: https://2.bp.blogspot.com/-kEq7BnhAORU/VfNCzhGeWAI/AAAAAAAAt3o/9ruJMgtifwE/s1600/Caesar.jpg
+TEXT: TFW when u eat mouse poop
+# Multi-line example below:
+#TEXT: |
+#  TFW when you
+#  eat mouse poop
+FONT_SIZE: 40
+HEIGHT: 275
+# Deep fry settings - set DEEP_FRY = true to fry the meme
+DEEP_FRY: False
+COMPRESSION_LEVEL: 10
+CONTRAST_INCREASE_PERCENT: 66
+
+
+## RORSCHACH VALUES ##
+SOURCE_IMG_URL: https://ih1.redbubble.net/image.437170128.9273/flat,550x550,075,f.u7.jpg
+# Also good - https://desenio.com/bilder/artiklar/zoom/3569_2.jpg
+COLOR_TO_REPLACE: '#FFFFFF'
+FUZZ: 25000
+ALPHA: 0
+IMAGE_1_COLOR: '#c2412e'
+IMAGE_2_COLOR: '#532ec2'
+BACKGROUND_COLOR: '#9dc22e'
