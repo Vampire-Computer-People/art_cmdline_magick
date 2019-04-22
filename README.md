@@ -2,7 +2,7 @@
 
 1. Download this project
 2. Unzip the archive
-3. cd to the project directory, e.g. `cd ~/Downloads/art_command_line_imagemagick`
+3. cd to the project directory, e.g. `cd ~/Downloads/art_cmdline_magick`
 
 There are a few options for setting up this codebase/environment depending on your OS and preferences. You may need to use the `sudo` command as a prefix for some commands depending on your system settings.
 
@@ -11,10 +11,10 @@ There are a few options for setting up this codebase/environment depending on yo
 For OSX and Linux users, we suggest setting up this codebase/environment using Docker. You will need to create a Docker account to get access to the download link.
 
 1. Download and install docker here: `https://www.docker.com/products/docker-desktop`
-2. cd to the project directory after making sure Docker Desktop is running, e.g. `cd ~/Downloads/art_command_line_imagemagick`
+2. cd to the project directory after making sure Docker Desktop is running, e.g. `cd ~/Downloads/art_cmdline_magick`
 3. Run `docker build -t magick_image .`
-4. Run `docker run -v "$(pwd):/art_command_line_imagemagick" -i -t magick_image bin/sh`
-5. cd to the project directory now that you are working inside the Docker container `cd art_command_line_imagemagick`
+4. Run `docker run -v "$(pwd):/art_cmdline_magick" -i -t magick_image bin/sh`
+5. cd to the project directory now that you are working inside the Docker container `cd art_cmdline_magick`
 5. Execute scripts as shown below in the "Script exection examples" section. 
 
 # General Install 
@@ -31,7 +31,7 @@ You can also set up this codebase/environment directly on your machine without u
 3. Install pip if you don't already have it (OSX pre-installed won't) - instructions here - `https://pip.pypa.io/en/stable/installing/`
     1. Run `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
     2. Run `python get-pip.py`
-4. cd to the project directory, e.g. `cd ~/Downloads/art_command_line_imagemagick`
+4. cd to the project directory, e.g. `cd ~/Downloads/art_cmdline_magick`
 5. Install the project requirements `python -m pip install -r requirements.txt`
 6. Execute scripts as shown below in the "Script exection examples" section.
 
