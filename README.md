@@ -1,21 +1,12 @@
 # Art on the command line with ImageMagick
 
+Try out our Glitch app if you want to skip all this! - https://glitch.com/~omnikrll-art-cmdline-magick-glitch
+
 1. Download this project
 2. Unzip the archive
 3. cd to the project directory, e.g. `cd ~/Downloads/art_cmdline_magick`
 
 There are a few options for setting up this codebase/environment depending on your OS and preferences. You may need to use the `sudo` command as a prefix for some commands depending on your system settings.
-
-# Docker
-
-For OSX and Linux users, we suggest setting up this codebase/environment using Docker. You will need to create a Docker account to get access to the download link.
-
-1. Download and install docker here: `https://www.docker.com/products/docker-desktop`
-2. cd to the project directory after making sure Docker Desktop is running, e.g. `cd ~/Downloads/art_cmdline_magick`
-3. Run `docker build -t magick_image .`
-4. Run `docker run -v "$(pwd):/art_cmdline_magick" -i -t magick_image bin/sh`
-5. cd to the project directory now that you are working inside the Docker container `cd art_cmdline_magick`
-5. Execute scripts as shown below in the "Script exection examples" section. 
 
 # General Install 
 
@@ -34,6 +25,17 @@ You can also set up this codebase/environment directly on your machine without u
 4. cd to the project directory, e.g. `cd ~/Downloads/art_cmdline_magick`
 5. Install the project requirements `python -m pip install -r requirements.txt`
 6. Execute scripts as shown below in the "Script exection examples" section.
+
+# Docker
+
+You will need to create a Docker account to get access to the download link.
+
+1. Download and install docker here: `https://www.docker.com/products/docker-desktop`
+2. cd to the project directory after making sure Docker Desktop is running, e.g. `cd ~/Downloads/art_cmdline_magick`
+3. Run `docker build -t magick_image .`
+4. Run `docker run -v "$(pwd):/art_cmdline_magick" -i -t magick_image bin/sh`
+5. cd to the project directory now that you are working inside the Docker container `cd art_cmdline_magick`
+5. Execute scripts as shown below in the "Script exection examples" section. 
 
 # Installing Imagemagick from binaries via OSX
 
@@ -87,3 +89,9 @@ Scripts are set to output files to the /output folder.
 ## Rorschach
 
 `python scripts/rorschach.py`
+
+## MAX DOUBT
+
+`magick -size 20x20 xc:white +noise random -scale 500x500 -statistic minimum 20 -swirl "%[fx:rand()*240-180]" -virtual-pixel mirror -distort SRT "%[fx:rand()*360]" cubic.png`
+
+`magick`
