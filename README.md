@@ -96,9 +96,11 @@ Scripts are set to output files to the /output folder.
 
 ```
 SLICES=13
+INPUT=output/cubic.png
+OUTPUT=output/mandala.png
 
 magick \
-   output/cubic.png \
+   $INPUT \
    -set option:h0 %[h] \
    -virtual-pixel mirror \
    -set option:distort:viewport %[w]x%[fx:h*1.5] \
@@ -119,5 +121,37 @@ magick \
    -gravity center \
    -extent %[h0]x%[h0] \
    +repage \
-      output/mandala.png
+      $OUTPUT
+```
+
+in PowerShell:
+
+```
+$SLICES=13
+$INPUT="output/cubic.png"
+$OUTPUT="output/mandala.png"
+
+magick `
+   $INPUT `
+   -set option:h0 %[h] `
+   -virtual-pixel mirror `
+   -set option:distort:viewport %[w]x%[fx:h*1.5] `
+   -distort affine "0,0 0,%[fx:h/2]" `
+   -set option:distort:viewport "%[fx:ceil(h*tan(pi/$SLICES))]x%[h]" `
+   -distort affine "%[fx:w/2],0 0,0" `
+   -distort affine "0,%[h] 0,%[h]  %[w],%[h] %[w],%[h]  0,0 %[w],0" `
+   -virtual-pixel none `
+   -distort affine "%[w],0 %[w],0  1.5,0 0,0  1.5,%[h] %[w],%[h]" `
+   -virtual-pixel mirror `
+   -set option:distort:viewport %[w]x%[fx:h/2] `
+   -distort SRT "0,0 0.5 0 %[w],0" `
+   -duplicate $SLICES +delete `
+   -virtual-pixel none `
+   -set option:distort:viewport %[fx:h*2]x%[fx:h*2] `
+   -distort SRT "%[fx:w/2],%[h] 1 %[fx:t*360/n] %[h],%[h]" `
+   -layers merge `
+   -gravity center `
+   -extent %[h0]x%[h0] `
+   +repage `
+      $OUTPUT
 ```
