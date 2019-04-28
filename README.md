@@ -92,7 +92,7 @@ Scripts are set to output files to the /output folder.
 
 ## MAX DOUBT
 
-`magick -size 20x20 xc:white +noise random -scale 500x500 -statistic minimum 20 -swirl "%[fx:rand()*240-180]" -virtual-pixel mirror -distort SRT "%[fx:rand()*360]" cubic.png`
+`magick -size 20x20 xc:white +noise random -scale 500x500 -statistic minimum 20 -swirl "%[fx:rand()*240-180]" -virtual-pixel mirror -distort SRT "%[fx:rand()*360]" output/cubic.png`
 
 ```
 SLICES=13
